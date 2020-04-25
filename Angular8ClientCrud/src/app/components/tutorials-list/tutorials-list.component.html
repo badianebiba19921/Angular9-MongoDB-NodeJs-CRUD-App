@@ -25,15 +25,12 @@
           class="list-group-item"
           *ngFor="let tutorial of tutorials; let i = index"
           [class.active]="i == currentIndex"
-          (click)="setActiveTutorial(tutorial, i)"
-        >
+          (click)="setActiveTutorial(tutorial, i)">
           {{ tutorial.title }}
         </li>
       </ul>
   
-      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
-        Remove All
-      </button>
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">Remove All</button>
     </div>
     <div class="col-md-6">
       <div *ngIf="currentTutorial">
@@ -42,17 +39,13 @@
           <label><strong>Title:</strong></label> {{ currentTutorial.title }}
         </div>
         <div>
-          <label><strong>Description:</strong></label>
-          {{ currentTutorial.description }}
+          <label><strong>Description:</strong></label> {{ currentTutorial.description }}
         </div>
         <div>
-          <label><strong>Status:</strong></label>
-          {{ currentTutorial.published ? "Published" : "Pending" }}
+          <label><strong>Status:</strong></label> {{ currentTutorial.published ? "Published" : "Pending" }}
         </div>
   
-        <a class="badge badge-warning" href="/tutorials/{{ currentTutorial.id }}">
-          Edit
-        </a>
+        <a class="badge badge-warning" href="/tutorials/{{ currentTutorial.id }}">Edit</a>
       </div>
   
       <div *ngIf="!currentTutorial">
